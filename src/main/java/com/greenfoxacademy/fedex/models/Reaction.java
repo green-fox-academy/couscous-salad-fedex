@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -17,6 +15,7 @@ import java.util.List;
 @Entity
 public class Reaction {
     @Id
+    @Enumerated(EnumType.ORDINAL)
     private ReactionType id;
 
     @OneToMany(mappedBy = "reaction")
