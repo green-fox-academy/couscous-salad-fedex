@@ -15,7 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class ReactionGiverKey implements Serializable {
+public class ReactionGiversKey implements Serializable {
     @Column(name = "meme_id")
     private Long memeId;
 
@@ -26,7 +26,7 @@ public class ReactionGiverKey implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ReactionGiverKey that = (ReactionGiverKey) o;
+        ReactionGiversKey that = (ReactionGiversKey) o;
         return memeId.equals(that.memeId) && reactionId == that.reactionId;
     }
 

@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,6 +18,9 @@ import javax.persistence.Id;
 public class Reaction {
     @Id
     private ReactionType id;
+
+    @OneToMany(mappedBy = "reaction")
+    private List<ReactionGivers> reactionGiversList;
 
     public String getType() {
         return id.toString();

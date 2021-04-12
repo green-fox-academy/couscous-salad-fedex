@@ -19,7 +19,7 @@ public class User {
     private Long id;
 
     @ManyToMany(mappedBy = "userList")
-    private List<ReactionGiver> reactionList;
+    private List<ReactionGivers> reactionList;
 
 
 }

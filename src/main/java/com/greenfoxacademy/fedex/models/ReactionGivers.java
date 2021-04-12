@@ -11,9 +11,20 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class ReactionGiver {
+public class ReactionGivers {
     @EmbeddedId
-    private ReactionGiverKey id;
+    private ReactionGiversKey id;
+
+    @ManyToOne
+    @MapsId("memeId")
+    @JoinColumn(name = "meme_id")
+    private Meme meme;
+
+    @ManyToOne
+    @MapsId("reactionId")
+    @JoinColumn(name = "reaction_id")
+    private Reaction reaction;
+
     @ManyToMany
     @JoinTable(
             name="reaction_giver_list",
@@ -24,12 +35,12 @@ public class ReactionGiver {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> userList;
 
-    public ReactionGiver() {
+    public ReactionGivers() {
         userList = new ArrayList<>();
     }
 
-    public ReactionGiver(Long memeId, ReactionType reactionId) {
-        id = new ReactionGiverKey(memeId, reactionId);
+    public ReactionGivers(Meme meme, Reaction reaction) {
+        id = new ReactionGiversKey(meme.getId(), reaction.getId());
         userList = new ArrayList<>();
     }
 
