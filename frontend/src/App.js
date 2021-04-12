@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
-import NotFound from './pages/NotFound/NotFound';
-import './App.css';
 import Header from './parts/Header/Header';
+import Login from './pages/Login/Login';
+import MemeGenerator from './pages/MemeGenerator/MemeGenerator';
+import NotFound from './pages/NotFound/NotFound';
+import Register from './pages/Register/Register';
 import SetOwnReactions from './components/SetOwnReactions';
+import './App.css';
 
 import Memelist from './pages/Memes/Memelist';
 
@@ -18,10 +19,13 @@ function App() {
         <Switch>
           <Route exact path="/" className="memelist" component={Memelist}/>
           <Route exact path="/setreaction/:id" className="memereaction" component={SetOwnReactions}/>
-          <Route exact path="/login">
+          <Route path="/memegenerator">
+            <MemeGenerator />
+          </Route>
+          <Route path="/login">
             <Login />
           </Route>
-          <Route exact path="/register">
+          <Route path="/register">
             <Register />
           </Route>
           <Route exact path="*">
@@ -31,7 +35,7 @@ function App() {
           <Switch>
             <Route exact path="/" className="memelist" component={Memelist} />
           </Switch>
-       
+
       </div>
     </Router>
   );

@@ -1,0 +1,29 @@
+2021-04-15 17:51:22,118 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 17:54:11,844 WARN com.greenfoxacademy.fedex.exceptions.InvalidMemeException This meme already exists.
+2021-04-15 17:54:11,874 INFO After request [POST /meme] Execution time: 114ms
+2021-04-15 17:54:39,948 INFO After request [POST /meme] Execution time: 224ms
+2021-04-15 17:55:28,679 INFO After request [OPTIONS /login] Execution time: 9ms
+2021-04-15 17:55:28,701 INFO Successful login for user: test6@mail.com
+2021-04-15 17:55:28,884 INFO After request [POST /login] Execution time: 200ms
+2021-04-15 17:59:02,603 INFO Successful login for user: test6@mail.com
+2021-04-15 17:59:02,693 INFO After request [POST /login] Execution time: 92ms
+2021-04-15 18:03:24,160 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 18:04:58,832 INFO After request [OPTIONS /login] Execution time: 26ms
+2021-04-15 18:04:58,940 INFO Successful login for user: test6@mail.com
+2021-04-15 18:04:59,384 INFO After request [POST /login] Execution time: 546ms
+2021-04-15 18:11:13,069 INFO After request [OPTIONS /login] Execution time: 1ms
+2021-04-15 18:11:13,074 INFO Successful login for user: test6@mail.com
+2021-04-15 18:11:13,165 INFO After request [POST /login] Execution time: 93ms
+2021-04-15 18:24:46,019 INFO Successful login for user: test6@mail.com
+2021-04-15 18:24:46,106 WARN org.springframework.security.authentication.BadCredentialsException Bad credentials
+2021-04-15 18:24:46,109 INFO After request [POST /login] Execution time: 91ms
+2021-04-15 18:24:55,053 INFO Successful login for user: test6@mail.com
+2021-04-15 18:24:55,146 INFO After request [POST /login] Execution time: 94ms
+2021-04-15 18:28:49,399 INFO Successful login for user: test6@mail.com
+2021-04-15 18:28:49,490 INFO After request [POST /login] Execution time: 92ms
+2021-04-15 18:35:40,873 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 18:36:20,201 INFO Successful login for user: test6@mail.com
+2021-04-15 18:36:20,647 INFO After request [POST /login] Execution time: 550ms
+2021-04-15 18:36:29,949 INFO After request [POST /meme] Execution time: 224ms
+2021-04-16 02:39:38,989 INFO After request [POST /meme] Execution time: 155ms
+2021-04-16 10:30:25,523 DEBUG Filter 'requestLoggingFilterConfig' configured for use
