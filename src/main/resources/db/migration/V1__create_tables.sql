@@ -1,11 +1,6 @@
-CREATE TABLE hibernate_sequence
-(
-    next_val    bigint
-);
-
 CREATE TABLE user
 (
-    id            bigint       not null,
+    id            bigint       not null auto_increment,
     username      varchar(255) not null,
     email         varchar(255),
     password      varchar(255),
@@ -13,13 +8,13 @@ CREATE TABLE user
 );
 
 create table meme (
-    id  bigint      not null,
+    id            bigint       not null auto_increment,
     primary key (id)
 );
 
 create table reaction
 (
-    id  integer     not null,
+    id          integer     not null,
     primary key (id)
 );
 

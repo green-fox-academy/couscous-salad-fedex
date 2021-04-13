@@ -1,4 +1,4 @@
 INSERT INTO meme (id)
-VALUES (14),
-       (15),
-       (16);
+VALUES (1),
+       (2),
+       (3);
