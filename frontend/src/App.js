@@ -4,12 +4,17 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import './App.css';
+import Header from './parts/Header/Header';
+import RootRedirect from './parts/RootRedirect/RootRedirect';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Route path="/"></Route>
+        <Header />
+        <Route path="/">
+          <RootRedirect />
+        </Route>
         <Switch>
           <Route path="/login">
             <Login />
