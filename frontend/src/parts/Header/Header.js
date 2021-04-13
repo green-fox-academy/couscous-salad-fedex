@@ -31,7 +31,7 @@ const Header = () => {
 
   const setHeaderToMain = (
     <nav className="header">
-      <Link to="/main">
+      <Link to="/">
         <h1>Hi {userName}!</h1>
       </Link>
       <div className="headerLinks">
