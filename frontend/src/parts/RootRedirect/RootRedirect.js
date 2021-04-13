@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 const RootRedirect = () => {
   const cookie = new Cookies();
   return cookie.get('accessToken') ? (
-    <Redirect to="/main" />
+    <Redirect to="/" />
   ) : (
     <Redirect to="/login" />
   );
