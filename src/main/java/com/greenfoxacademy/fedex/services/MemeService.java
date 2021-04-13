@@ -36,24 +36,31 @@ public class MemeService {
             throws InvalidReactionException {
         Optional<ReactionGivers> optionalReactionGivers =
                 reactionGiversRepository.findById_MemeIdAndId_ReactionId(meme.getId(), reaction.getId());
-        ReactionGivers reactionGivers;
         if (!optionalReactionGivers.isPresent()) {
-            reactionGivers = createNewReactionGivers(user, meme, reaction);
-        } else {
-            reactionGivers = updateReactionGivers(optionalReactionGivers, user);
+            return createNewReactionGivers(user, meme, reaction);
         }
-        return reactionGivers;
+        return updateReactionGivers(optionalReactionGivers.get(), user);
     }
 
     private ReactionGivers createNewReactionGivers(User user, Meme meme, Reaction reaction) {
         return reactionGiversRepository.save(new ReactionGivers(meme, reaction, user));
     }
 
-    private ReactionGivers updateReactionGivers(Optional<ReactionGivers> optionalReactionGivers, User user)
+    private ReactionGivers updateReactionGivers(ReactionGivers reactionGivers, User user)
             throws InvalidReactionException {
-        ReactionGivers reactionGivers = optionalReactionGivers.get();
+        checkIfUserAlreadyReacted(reactionGivers, user);
         reactionGivers.addUser(user);
         return reactionGiversRepository.save(reactionGivers);
+    }
+
+    private void checkIfUserAlreadyReacted(ReactionGivers reactionGivers, User user)
+            throws InvalidReactionException {
+        Optional<ReactionGivers> optionalReactionGivers = user.getReactionList().stream()
+                .filter(rg -> rg.getMeme().getId().equals(reactionGivers.getMeme().getId()))
+                .findFirst();
+        if (optionalReactionGivers.isPresent()) {
+            throw new InvalidReactionException("This user already reacted to this meme.");
+        }
     }
 
     private Reaction checkReactionType(ReactionRequestDTO reactionRequest)

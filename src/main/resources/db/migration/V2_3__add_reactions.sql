@@ -1,5 +1,6 @@
 INSERT INTO reaction (id)
-VALUES (1),
+VALUES (0),
+       (1),
        (2),
        (3),
        (4),

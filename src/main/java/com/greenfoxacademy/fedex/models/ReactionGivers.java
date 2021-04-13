@@ -59,7 +59,7 @@ public class ReactionGivers {
 
     public void addUser(User user) throws InvalidReactionException {
         if (userList.contains(user)) {
-            throw new InvalidReactionException("This user already reacted to this meme.");
+            throw new InvalidReactionException("This user already reacted to this meme with this reaction.");
         }
         userList.add(user);
     }

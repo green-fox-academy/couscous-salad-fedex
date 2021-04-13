@@ -24,6 +24,9 @@ public class User {
     @ManyToMany(mappedBy = "userList")
     private List<ReactionGivers> reactionList;
 
-
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }
 
