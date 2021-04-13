@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 const NotFound = () => {
   const history = useHistory();
   const handleClick = () => {
-    history.push('/main');
+    history.push('/');
   };
   return (
     <div className="not-found-page">
