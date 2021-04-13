@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "reaction")
 public class Reaction {
     @Id
     @Enumerated(EnumType.ORDINAL)

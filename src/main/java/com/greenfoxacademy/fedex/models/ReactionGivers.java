@@ -13,7 +13,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @Entity
-@Table(name = "reaction_givers")
 public class ReactionGivers {
     @EmbeddedId
     private ReactionGiversKey id;
