@@ -1,0 +1,109 @@
+.login-page {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+
+.login-h1 {
+  font-size: 4rem;
+  color: white;
+}
+.login-form {
+  width: 420px;
+  height: 270px;
+  padding: 25px;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4287eedc;
+}
+
+[class*='login-input'] {
+  background: transparent;
+  outline: none;
+  padding: 10px 0;
+  border: 0;
+  font-size: 1.4rem;
+}
+[class*='login-input']::placeholder {
+  color: rgb(5, 18, 105);
+}
+
+.login-input-OK {
+  border-bottom: 2px solid #070d14;
+  caret-color: #1857c4;
+}
+.login-input-ERROR {
+  border-bottom: 2px solid #d41908;
+  caret-color: #d41908;
+}
+
+.login-btn {
+  width: 100px;
+  height: 40px;
+  border: 0;
+  border-radius: 2px;
+  background-color: rgb(21, 65, 107);
+  box-shadow: 3px 4px 7px -4px #000000;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  align-self: flex-end;
+  outline: none;
+}
+
+.login-btn:hover {
+  background-color: rgb(31, 38, 243);
+}
+.login-btn:active {
+  transform: scale(0.9);
+}
+
+.login-a {
+  text-decoration: none;
+  color: black;
+}
+
+.errorBox {
+  height: 24px;
+}
+
+.input-error-message {
+  color: #d41908;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v78/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
+    format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  color: #6a7892;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
