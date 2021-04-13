@@ -3821,9 +3821,6 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-<<<<<<< HEAD
-commander@2, commander@^2.20.0:
-=======
 combined-stream@~0.0.4:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-0.0.7.tgz#0137e657baa5a7541c57ac37ac5fc07d73b4dc1f"
@@ -3831,8 +3828,7 @@ combined-stream@~0.0.4:
   dependencies:
     delayed-stream "0.0.5"
 
-commander@^2.20.0:
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
+commander@2, commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -4365,14 +4361,11 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.7.tgz#2a5fb75e1015e84dd15692f71e89a1450290950b"
   integrity sha512-KxnUB0ZMlnUWCsx2Z8MUsr6qV6ja1w9ArPErJaJaF8a5SOWoHLIszeCTKGRGRgtLgYrs1E8CHkNSP1VZTTPc9g==
 
-<<<<<<< HEAD
-=======
 ctype@0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/ctype/-/ctype-0.5.3.tgz#82c18c2461f74114ef16c135224ad0b9144ca12f"
   integrity sha1-gsGMJGH3QRTvFsE1IkrQuRRMoS8=
 
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
@@ -6246,14 +6239,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-<<<<<<< HEAD
-=======
 hide-key@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/hide-key/-/hide-key-0.0.1.tgz#a7948ae0bcc286db4eab713649790ad3ed308bbb"
   integrity sha1-p5SK4LzChttOq3E2SXkK0+0wi7s=
 
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
 history@^4.9.0:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/history/-/history-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
@@ -6275,14 +6265,11 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-<<<<<<< HEAD
-=======
 hoek@0.9.x:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-0.9.1.tgz#3d322462badf07716ea7eb85baf88079cddce505"
   integrity sha1-PTIkYrrfB3Fup+uFuviAec3c5QU=
 
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
 hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
@@ -10272,11 +10259,7 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-<<<<<<< HEAD
 react-redux@^7.2.2:
-=======
-react-redux@^7.2.3:
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.3.tgz#4c084618600bb199012687da9e42123cca3f0be9"
   integrity sha512-ZhAmQ1lrK+Pyi0ZXNMUZuYxYAZd59wFuVDGUt536kSGdD0ya9Q7BfsE95E3TsFLE3kOSFp5m6G5qbatE+Ic1+w==
@@ -10322,11 +10305,7 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-<<<<<<< HEAD
 react-scripts@^4.0.3:
-=======
-react-scripts@4.0.3:
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-4.0.3.tgz#b1cafed7c3fa603e7628ba0f187787964cb5d345"
   integrity sha512-S5eO4vjUzUisvkIPB7jVsKtuH2HhWcASREYWHAQ1FP5HyCv3xgn+wpILAEWkmy+A+tTNbSZClhxjT3qz6g4L1A==
@@ -10504,24 +10483,12 @@ redux-devtools-extension@^2.13.9:
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz#6b764e8028b507adcb75a1cae790f71e6be08ae7"
   integrity sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==
 
-<<<<<<< HEAD
-=======
-redux-persist@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-6.0.0.tgz#b4d2972f9859597c130d40d4b146fecdab51b3a8"
-  integrity sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==
-
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
-<<<<<<< HEAD
 redux@^4.0.0, redux@^4.0.5:
-=======
-redux@^4.0.0:
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
   integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
@@ -12029,14 +11996,11 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.3:
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
 
-<<<<<<< HEAD
-=======
 tinycolor@0.x:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/tinycolor/-/tinycolor-0.0.1.tgz#320b5a52d83abb5978d81a3e887d4aefb15a6164"
   integrity sha1-MgtaUtg6u1l42Bo+iH1K77FaYWQ=
 
->>>>>>> 1ecf0eb (can list memes and working on reaction buttons)
 tmpl@1.0.x:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
@@ -12595,6 +12559,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+web-vitals@^1.0.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.1.tgz#2df535e3355fb7fbe34787b44b736e270e539377"
+  integrity sha512-jYOaqu01Ny1NvMwJ3dBJDUOJ2PGWknZWH4AUnvFOscvbdHMERIKT2TlgiAey5rVyfOePG7so2JcXXZdSnBvioQ==
 
 webidl-conversions@^5.0.0:
   version "5.0.0"

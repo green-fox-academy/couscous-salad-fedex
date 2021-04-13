@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './Memelist.css';
 import { useSelector, useDispatch } from 'react-redux';
-import useFetch from '../services/useFetch';
-import Meme from '../components/Meme';
-import { getMemes } from '../actions/memeActions';
+import useFetch from '../../services/useFetch';
+import Meme from '../../components/Meme';
+import { getMemes } from '../../actions/memeActions';
 
 //const backendUrl = process.env.REACT_APP_BACKENDURL;
 const url = `https://api.punkapi.com/v2/beers?page=5&per_page=10`;
