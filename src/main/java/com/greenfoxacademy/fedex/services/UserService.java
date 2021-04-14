@@ -34,7 +34,6 @@ public class UserService {
   @Autowired
   private AuthenticationManager authenticationManager;
 
-
   public ResponseDto validateLogin(User loginRequest) throws MissingParametersException {
     if (getMissingParams(loginRequest).size() != 0) {
       throw new MissingParametersException(getMissingParams(loginRequest).toString());

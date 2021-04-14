@@ -13,20 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
-public class User {
+public class Meme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
 
-    @ManyToMany(mappedBy = "userList")
-    private List<ReactionGivers> reactionList;
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+    @OneToMany(mappedBy = "meme")
+    private List<ReactionGivers> reactionGiversList;
 }
-
