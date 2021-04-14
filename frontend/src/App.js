@@ -5,6 +5,7 @@ import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import './App.css';
 import Header from './parts/Header/Header';
+import SetOwnReactions from './components/SetOwnReactions';
 
 import Memelist from './pages/Memes/Memelist';
 
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/"></Route>
         <Switch>
           <Route exact path="/" className="memelist" component={Memelist}/>
+          <Route exact path="/setreaction/:id" className="memereaction" component={SetOwnReactions}/>
           <Route exact path="/login">
             <Login />
           </Route>

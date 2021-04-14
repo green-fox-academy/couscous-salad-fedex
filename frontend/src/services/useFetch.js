@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
+import Cookies from 'universal-cookie';
 
 const useFetch = url => {
-      console.log(url);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(true);
+  const cookie = new Cookies();
+  const token = cookie.get('Meme-token');
 
   useEffect(() => {
     const abortCont = new AbortController();
-    //const userToken = localStorage.getItem('token');
 
     fetch(url, {
       signal: abortCont.signal,
       headers: {
         'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`|| 0
       },
     })
       .then(response => {

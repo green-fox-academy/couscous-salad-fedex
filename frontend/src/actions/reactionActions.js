@@ -1,11 +1,15 @@
 import {
-  UPVOTE_HAPPY,
-  UPVOTE_SAD,
-  UPVOTE_FUNNY,
-  UPVOTE_ANGRY,
-  UPVOTE_SURPRISED,
+  SAVE_COMMENT,
   SET_REACTIONS,
+  SET_MY_REACTIONS,
 } from '../constants/actionTypes';
+
+export function saveComment(payload) {
+  return {
+    type: SAVE_COMMENT,
+    payload,
+  }
+}
 
 export function setReactions(payload) {
   return {
@@ -13,33 +17,9 @@ export function setReactions(payload) {
     payload,
   }
 }
-export function upvoteHappy(payload) {
+export function setMyReactions(payload) {
   return {
-    type: UPVOTE_HAPPY,
+    type: SET_MY_REACTIONS,
     payload,
-  };
-}
-export function upvoteSad(payload) {
-  return {
-    type: UPVOTE_SAD,
-    payload,
-  };
-}
-export function upvoteFunny(payload) {
-  return {
-    type: UPVOTE_FUNNY,
-    payload,
-  };
-}
-export function upvoteAngry(payload) {
-  return {
-    type: UPVOTE_ANGRY,
-    payload,
-  };
-}
-export function upvoteSurprised(payload) {
-  return {
-    type: UPVOTE_SURPRISED,
-    payload,
-  };
+  }
 }

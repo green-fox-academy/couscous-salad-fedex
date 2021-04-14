@@ -1,76 +1,33 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  upvoteHappy,
-  upvoteSad,
-  upvoteFunny,
-  upvoteAngry,
-  upvoteSurprised
-} from '../actions/reactionActions';
-import Cookies from 'universal-cookie'
+import { setReactions } from '../actions/reactionActions';
+import { useHistory } from 'react-router';
 
 function UserButtons(props) {
  
   const { meme } = props;
   const dispatch = useDispatch();
-  const backendUrl = process.env.REACT_APP_BACKENDURL;
-  const url = `${backendUrl}/reaction/${meme.meme_id}`;
-  const cookie = new Cookies();
-  const token = cookie.get('accessToken');
+  const history = useHistory();
 
-  const upvote = (event) => {
-    const reaction = event.target.getAttribute('class');
-    fetch(url, {
-      method: 'PUT',
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-      body: {
-        reaction_type: reaction,
-      },
-    })
-      .then(response => {
-        if (response.status === 200) {
-          return response;
-        }
-        throw new Error('Connection failed!');
-      })
-      .then(() => {
-        if (reaction === 'happy') {
-        dispatch(upvoteHappy(meme.meme_id))
-        } else if (reaction === 'sad') {
-        dispatch(upvoteSad(meme.meme_id))
-        } else if (reaction === 'funny') {
-        dispatch(upvoteFunny(meme.meme_id))
-        } else if (reaction === 'angry') {
-        dispatch(upvoteAngry(meme.meme_id))
-        } else if (reaction === 'surprised') {
-        dispatch(upvoteSurprised(meme.meme_id))
-        }
-      })
-      
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  const handleClick = (meme) => {
+    history.push(`/setreactions/:${meme.meme_id}`)
+  }
+  
+  useEffect(() => {
+    dispatch(setReactions(meme));
+  }, [meme]);
 
   return (
-    <div className="Reactions">
-      <div className="happy">
-        <span onClick={ upvote }>Happy { meme.happy }</span>
+    <div className="reactions">
+      <div className="meme-funny">{meme.reaction_list[0].reaction_type} : {meme.reaction_list[0].amount}</div>
+      <div className="meme-sad">{meme.reaction_list[1].reaction_type} : {meme.reaction_list[1].amount}</div>
+      <div className="meme-surprised">{meme.reaction_list[2].reaction_type} : {meme.reaction_list[2].amount}</div>
+      <div className="meme-angry">{meme.reaction_list[3].reaction_type} : {meme.reaction_list[3].amount}</div>
+      <div className="meme-erotic">{meme.reaction_list[4].reaction_type} : {meme.reaction_list[4].amount}</div>
+      <div className="meme-happy">{meme.reaction_list[5].reaction_type} : { meme.reaction_list[5].amount }</div>
+      <div className="modify function">
+        <button onClick={handleClick}>Set reactions</button>
       </div>
-      <div className="sad">
-        <span onClick={ upvote }>Sad { meme.sad }</span>
-      </div>
-      <div className="funny">
-        <span onClick={ upvote }>Funny { meme.funny }</span>
-      </div>
-      <div className="angry">
-        <span onClick={ upvote }>Angry { meme.angry }</span>
-      </div>
-      <div className="surprised">
-        <span onClick={ upvote }>Surprised { meme.surprised }</span>
-      </div> 
     </div>
   );
 }

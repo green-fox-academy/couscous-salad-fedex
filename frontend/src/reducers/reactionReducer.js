@@ -1,6 +1,7 @@
 import {
   SAVE_COMMENT,
-  SET_REACTIONS
+  SET_REACTIONS,
+  SET_MY_REACTIONS
 } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
@@ -21,12 +22,21 @@ const reactionReducer = (state = INITIAL_STATE, action) => {
       }
     case SET_REACTIONS:
       return {
-        funny : action.payload.funny.reaction_list[5].count,
-        sad : action.payload.sad.reaction_list[5].count,
-        surprised: action.payload.surprised.reaction_list[5].count,
-        angry : action.payload.angry.reaction_list[5].count,
-        erotic: action.payload.reaction_list[5].count,
-        happy : action.payload.reaction_list[5].count,
+        funny : action.payload.funny.reaction_list[0].amount,
+        sad : action.payload.sad.reaction_list[1].amount,
+        surprised: action.payload.surprised.reaction_list[2].amount,
+        angry : action.payload.angry.reaction_list[3].amount,
+        erotic: action.payload.reaction_list[4].amount,
+        happy : action.payload.reaction_list[5].amount,
+      }
+    case SET_MY_REACTIONS:
+      return {
+        funny : action.payload.funny.reaction_list[0].amount,
+        sad : action.payload.sad.reaction_list[1].amount,
+        surprised: action.payload.surprised.reaction_list[2].amount,
+        angry : action.payload.angry.reaction_list[3].amount,
+        erotic: action.payload.reaction_list[4].amount,
+        happy : action.payload.reaction_list[5].amount,
       }
     
     default:

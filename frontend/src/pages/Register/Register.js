@@ -4,7 +4,7 @@ import PasswordStrength from '../../components/PasswordStrength';
 import './Register.css';
 
 const Register = () => {
-  const [userName, setUserName] = useState('');
+  const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userData = { userName, email, password };
+    const userData = { username, email, password };
     const URL = process.env.REACT_APP_API_URL;
 
     try {
@@ -50,8 +50,8 @@ const Register = () => {
             required
             placeholder="Username"
             minLength="3"
-            value={userName}
-            onChange={(e) => {
+            value={username}
+            onChange={e => {
               setUserName(e.target.value);
               setInputStatus('register-input-OK');
               setError(null);
