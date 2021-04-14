@@ -1,4 +1,4 @@
-package com.greenfoxacademy.fedex.models;
+package com.greenfoxacademy.fedex.models.reactions;
 
 public enum ReactionType {
     FUNNY,

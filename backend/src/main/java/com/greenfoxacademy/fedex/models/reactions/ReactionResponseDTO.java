@@ -1,7 +1,7 @@
-package com.greenfoxacademy.fedex.models;
+package com.greenfoxacademy.fedex.models.reactions;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,8 +14,11 @@ import org.springframework.http.HttpStatus;
 public class ReactionResponseDTO {
     private HttpStatus status;
     private String message;
+    @JsonProperty("meme_id")
     private Long memeId;
+    @JsonProperty("reaction_type")
     private String reactionType;
+
 
     public ReactionResponseDTO(HttpStatus status, String message) {
         this.status = status;

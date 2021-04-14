@@ -1,4 +1,4 @@
-package com.greenfoxacademy.fedex.models;
+package com.greenfoxacademy.fedex.models.reactions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,23 +15,23 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class ReactionGiversKey implements Serializable {
-    @Column(name = "meme_id")
-    private Long memeId;
+public class ReactionGiversValueKey implements Serializable {
+    @Column(name = "reaction_givers_id")
+    private ReactionGiversKey reactionGiversId;
 
-    @Column(name = "reaction_id")
-    private ReactionType reactionId;
+    @Column(name = "user_id")
+    private Long userId;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ReactionGiversKey that = (ReactionGiversKey) o;
-        return memeId.equals(that.memeId) && reactionId == that.reactionId;
+        ReactionGiversValueKey that = (ReactionGiversValueKey) o;
+        return reactionGiversId.equals(that.reactionGiversId) && userId.equals(that.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(memeId, reactionId);
+        return Objects.hash(reactionGiversId, userId);
     }
 }

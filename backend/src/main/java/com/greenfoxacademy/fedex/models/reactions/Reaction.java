@@ -1,4 +1,4 @@
-package com.greenfoxacademy.fedex.models;
+package com.greenfoxacademy.fedex.models.reactions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

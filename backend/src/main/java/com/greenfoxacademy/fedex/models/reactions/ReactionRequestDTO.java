@@ -1,4 +1,4 @@
-package com.greenfoxacademy.fedex.models;
+package com.greenfoxacademy.fedex.models.reactions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -11,4 +11,5 @@ import lombok.Setter;
 public class ReactionRequestDTO {
     @JsonProperty(value = "reaction_type")
     private ReactionType reactionType;
+    private Integer amount;
 }

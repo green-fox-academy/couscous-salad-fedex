@@ -1,5 +1,6 @@
 package com.greenfoxacademy.fedex.models;
 
+import com.greenfoxacademy.fedex.models.reactions.ReactionDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,5 +14,5 @@ import java.util.List;
 @AllArgsConstructor
 public class MemeDTO {
     private String meme_path;
-    private List<ReactionDTO> reactionList;
+    private List<ReactionDTO> reaction_list;
 }
