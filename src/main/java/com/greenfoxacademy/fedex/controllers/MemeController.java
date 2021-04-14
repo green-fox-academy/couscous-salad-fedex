@@ -2,6 +2,7 @@ package com.greenfoxacademy.fedex.controllers;
 
 import com.greenfoxacademy.fedex.exceptions.InvalidMemeException;
 import com.greenfoxacademy.fedex.exceptions.InvalidReactionException;
+import com.greenfoxacademy.fedex.models.MemeDTO;
 import com.greenfoxacademy.fedex.models.ReactionRequestDTO;
 import com.greenfoxacademy.fedex.models.ReactionResponseDTO;
 import com.greenfoxacademy.fedex.services.MemeService;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class MemeController {
@@ -21,6 +24,11 @@ public class MemeController {
     public MemeController(MemeService memeService, UserService userService) {
         this.memeService = memeService;
         this.userService = userService;
+    }
+
+    @GetMapping("/meme-test")
+    public ResponseEntity<List<MemeDTO>> getAllMemes() {
+        return ResponseEntity.ok(memeService.getAllMemes());
     }
 
     @PutMapping("/reaction/{memeId}")

@@ -8,6 +8,7 @@ CREATE TABLE user
 
 create table meme (
     id            bigint       not null auto_increment,
+    meme_path     varchar(255),
     primary key (id)
 );
 

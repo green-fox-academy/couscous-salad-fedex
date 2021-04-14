@@ -17,6 +17,7 @@ public class Meme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String memePath;
 
     @OneToMany(mappedBy = "meme")
     private List<ReactionGivers> reactionGiversList;

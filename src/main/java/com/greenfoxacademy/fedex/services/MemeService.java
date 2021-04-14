@@ -9,6 +9,8 @@ import com.greenfoxacademy.fedex.repositories.ReactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -75,5 +77,19 @@ public class MemeService {
     private Meme checkIfValidMemeId(Long memeId)
             throws InvalidMemeException {
         return memeRepository.findById(memeId).orElseThrow(() -> new InvalidMemeException("Invalid Meme ID"));
+    }
+
+    public List<MemeDTO> getAllMemes() {
+        List<MemeDTO> memeList = new ArrayList<>();
+        memeRepository.findAll().forEach(
+                meme -> memeList.add(new MemeDTO(meme.getMemePath(), reactionsOfOneMeme(meme))));
+        return memeList;
+    }
+
+    private List<ReactionDTO> reactionsOfOneMeme(Meme meme) {
+        List<ReactionDTO> reactionList = new ArrayList<>();
+        meme.getReactionGiversList()
+                .forEach(rg -> reactionList.add(new ReactionDTO(rg.getReaction().getId(), rg.getUserList().size())));
+        return reactionList;
     }
 }
