@@ -13,7 +13,15 @@ Endpoints (all of them accept JSON):
 - required fields: none
 - returns list of memes: meme_path, reaction_list {reaction_type, count (has to be positive number)} - all reactiontypes are listed, even if the count is 0
 
-4. Add reaction to meme PUT '/reaction/{id}'
+4. GET /meme/{memeId}
+- return a meme with the specific memeId
+
+5. POST /meme
+- send a meme to the server
+- accepts an object with field "meme_path", with value of the direct URL of the meme image itself.
+- returns the sent meme
+
+6. Add reaction to meme PUT '/reaction/{id}'
 - required fields:
     - URI: meme id
   - body: reaction_type, count
@@ -23,4 +31,3 @@ Endpoints (all of them accept JSON):
   - reaction type is invalid
 - if this user already reacted to this meme with this reaction, the value of the previous input will be updated
 - returns: meme_id, reaction_type
-    
