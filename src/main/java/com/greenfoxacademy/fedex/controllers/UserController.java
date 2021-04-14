@@ -1,7 +1,8 @@
 package com.greenfoxacademy.fedex.controllers;
 
+import com.greenfoxacademy.fedex.exceptions.InvalidParametersException;
 import com.greenfoxacademy.fedex.exceptions.MissingParametersException;
-import com.greenfoxacademy.fedex.exceptions.UserNameAlreadyExistException;
+import com.greenfoxacademy.fedex.exceptions.ParamAlreadyExistException;
 import com.greenfoxacademy.fedex.models.ResponseDto;
 import com.greenfoxacademy.fedex.models.User;
 import com.greenfoxacademy.fedex.services.UserService;
@@ -25,7 +26,7 @@ public class UserController {
 
   @PostMapping("/register")
   public ResponseEntity<ResponseDto> register(@RequestBody User registrationRequest)
-      throws MissingParametersException, UserNameAlreadyExistException {
+      throws MissingParametersException, ParamAlreadyExistException, InvalidParametersException {
 
     return ResponseEntity.status(200).body(userService.register(registrationRequest));
   }
