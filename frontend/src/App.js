@@ -5,16 +5,13 @@ import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import './App.css';
 import Header from './parts/Header/Header';
-import RootRedirect from './parts/RootRedirect/RootRedirect';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
-        <Route path="/">
-          <RootRedirect />
-        </Route>
+        <Route exact path="/"></Route>
         <Switch>
           <Route path="/login">
             <Login />
@@ -22,7 +19,7 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="*">
+          <Route exact path="*">
             <NotFound />
           </Route>
         </Switch>
