@@ -50,19 +50,8 @@ public class MemeService {
 
     private ReactionGivers updateReactionGivers(ReactionGivers reactionGivers, User user)
             throws InvalidReactionException {
-        checkIfUserAlreadyReacted(reactionGivers, user);
         reactionGivers.addUser(user);
         return reactionGiversRepository.save(reactionGivers);
-    }
-
-    private void checkIfUserAlreadyReacted(ReactionGivers reactionGivers, User user)
-            throws InvalidReactionException {
-        Optional<ReactionGivers> optionalReactionGivers = user.getReactionList().stream()
-                .filter(rg -> rg.getMeme().getId().equals(reactionGivers.getMeme().getId()))
-                .findFirst();
-        if (optionalReactionGivers.isPresent()) {
-            throw new InvalidReactionException("This user already reacted to this meme.");
-        }
     }
 
     private Reaction checkReactionType(ReactionRequestDTO reactionRequest)
