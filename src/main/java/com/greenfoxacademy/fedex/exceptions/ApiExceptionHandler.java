@@ -30,7 +30,7 @@ public class ApiExceptionHandler {
     return ResponseEntity.status(403).body(new ResponseDto(errorStr,"Wrong password",null));
   }
 
-  @ExceptionHandler(value = {InvalidParametersException.class, UserNameAlreadyExistException.class})
+  @ExceptionHandler(value = {InvalidParametersException.class, ParamAlreadyExistException.class})
   public ResponseEntity<ResponseDto> handle4xxExceptionGeneral(Exception e) {
     return ResponseEntity.status(400).body(new ResponseDto(errorStr,e.getMessage(),null));
   }

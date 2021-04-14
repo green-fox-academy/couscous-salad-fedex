@@ -19,14 +19,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
+    private String email;
     private String password;
 
     @ManyToMany(mappedBy = "userList")
     private List<ReactionGivers> reactionList;
 
-    public User(String username, String password) {
+    public User(String username, String email, String password) {
         this.username = username;
         this.password = password;
+        this.email = email;
     }
 }
 
