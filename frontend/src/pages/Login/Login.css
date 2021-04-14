@@ -15,6 +15,9 @@
 .login-h1 {
   font-size: 4rem;
   color: white;
+  -webkit-box-reflect: below -0.4em linear-gradient(transparent, #0004);
+  font-style: italic;
+  font-variant: small-caps;
 }
 .login-form {
   width: 420px;
@@ -59,6 +62,8 @@
   cursor: pointer;
   align-self: flex-end;
   outline: none;
+  font-style: italic;
+  font-variant: small-caps;
 }
 
 .login-btn:hover {
