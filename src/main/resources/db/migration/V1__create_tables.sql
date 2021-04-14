@@ -1,20 +1,22 @@
 CREATE TABLE user
 (
-    id            bigint       not null auto_increment,
-    username      varchar(255) not null,
-    password      varchar(255),
+    id       bigint       not null auto_increment,
+    username varchar(255) not null,
+    email    varchar(255) not null,
+    password varchar(255),
     primary key (id)
 );
 
-create table meme (
-    id            bigint       not null auto_increment,
-    meme_path     varchar(255),
+create table meme
+(
+    id        bigint not null auto_increment,
+    meme_path varchar(255),
     primary key (id)
 );
 
 create table reaction
 (
-    id          integer     not null,
+    id integer not null,
     primary key (id)
 );
 
