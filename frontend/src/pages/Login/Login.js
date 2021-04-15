@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { loadUserToken, loadUserTokenPayload } from '../../actions/loginAction';
 
 const Login = () => {
-  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [inputStatus, setInputStatus] = useState('login-input-OK');
   const [error, setError] = useState(null);
@@ -19,11 +19,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userData = { userName, password };
+    const userData = { email, password };
     const URL = process.env.REACT_APP_API_URL;
 
     try {
-      const response = await fetch(`${URL}/api/login`, {
+      const response = await fetch(`${URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
@@ -56,13 +56,12 @@ const Login = () => {
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             className={inputStatus}
-            type="text"
+            type="email"
             required
-            placeholder="Username"
-            minLength="3"
-            value={userName}
+            placeholder="E-mail"
+            value={email}
             onChange={(e) => {
-              setUserName(e.target.value);
+              setEmail(e.target.value);
               setInputStatus('login-input-OK');
               setError(null);
             }}
