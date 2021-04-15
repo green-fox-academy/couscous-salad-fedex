@@ -9,6 +9,7 @@ import com.greenfoxacademy.fedex.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -18,12 +19,14 @@ public class UserController {
   @Autowired
   UserService userService;
 
+  @CrossOrigin
   @PostMapping("/login")
   public ResponseEntity<ResponseDto> login(@RequestBody User loginRequest) throws MissingParametersException {
 
     return ResponseEntity.status(200).body(userService.validateLogin(loginRequest));
   }
 
+  @CrossOrigin
   @PostMapping("/register")
   public ResponseEntity<ResponseDto> register(@RequestBody User registrationRequest)
       throws MissingParametersException, ParamAlreadyExistException, InvalidParametersException {

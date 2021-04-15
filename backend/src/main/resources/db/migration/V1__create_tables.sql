@@ -29,11 +29,13 @@ CREATE TABLE reaction_givers
     foreign key (reaction_id) references reaction (id)
 );
 
-CREATE TABLE reaction_givers_list
+CREATE TABLE reaction_givers_value
 (
-    meme_id     bigint  not null,
+    meme_id     bigint not null,
     reaction_id integer not null,
-    user_id     bigint  not null,
-    foreign key (user_id) references user (id),
-    foreign key (meme_id, reaction_id) references reaction_givers (meme_id, reaction_id)
+    user_id     bigint not null,
+    amount      integer,
+    primary key (meme_id, reaction_id, user_id),
+    foreign key (meme_id, reaction_id) references reaction_givers (meme_id, reaction_id),
+    foreign key (user_id) references user (id)
 );

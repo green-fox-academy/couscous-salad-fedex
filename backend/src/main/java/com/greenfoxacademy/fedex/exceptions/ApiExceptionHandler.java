@@ -1,6 +1,6 @@
 package com.greenfoxacademy.fedex.exceptions;
 
-import com.greenfoxacademy.fedex.models.ReactionResponseDTO;
+import com.greenfoxacademy.fedex.models.reactions.ReactionResponseDTO;
 import com.greenfoxacademy.fedex.models.ResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
