@@ -15,6 +15,9 @@
 .login-h1 {
   font-size: 4rem;
   color: white;
+  -webkit-box-reflect: below -0.4em linear-gradient(transparent, #0004);
+  font-style: italic;
+  font-variant: small-caps;
 }
 .login-form {
   width: 420px;
@@ -43,8 +46,8 @@
   caret-color: #1857c4;
 }
 .login-input-ERROR {
-  border-bottom: 2px solid #d41908;
-  caret-color: #d41908;
+  border-bottom: 2px solid #e91e0c;
+  caret-color: #e41907;
 }
 
 .login-btn {
@@ -59,6 +62,8 @@
   cursor: pointer;
   align-self: flex-end;
   outline: none;
+  font-style: italic;
+  font-variant: small-caps;
 }
 
 .login-btn:hover {
@@ -78,7 +83,7 @@
 }
 
 .input-error-message {
-  color: #d41908;
+  color: #e72d14;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,7 +102,7 @@
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
-  color: #6a7892;
+  color: red;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
