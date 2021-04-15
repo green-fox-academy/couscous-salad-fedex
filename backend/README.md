@@ -24,7 +24,7 @@ Endpoints (all of them accept JSON):
 6. Add reaction to meme PUT '/reaction/{id}'
 - required fields:
     - URI: meme id
-  - body: reaction_type, count
+  - body: reaction_type, amount
 - returns a 400 error and message if:
   - fields are missing
   - meme id is invalid
