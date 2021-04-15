@@ -83,7 +83,7 @@
 }
 
 .input-error-message {
-  color: #d41908;
+  color: #e72d14;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,7 +102,7 @@
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
-  color: #6a7892;
+  color: #e72d14;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
