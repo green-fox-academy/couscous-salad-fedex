@@ -6,6 +6,8 @@ import NotFound from './pages/NotFound/NotFound';
 import './App.css';
 import Header from './parts/Header/Header';
 
+import Memelist from './pages/Memelist'
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,10 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+          <Switch>
+            <Route exact path="/" component={Memelist} />
+          </Switch>
+       
       </div>
     </Router>
   );

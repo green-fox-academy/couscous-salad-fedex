@@ -1,3 +1,4 @@
+export const GET_MEMES = 'GET_MEMES';
 export const LOAD_USER_TOKEN = 'LOAD_USER_TOKEN';
 export const LOAD_USER_TOKEN_PAYLOAD = 'LOAD_USER_TOKEN_PAYLOAD';
 export const DELETE_STORE = 'DELETE_STORE';
