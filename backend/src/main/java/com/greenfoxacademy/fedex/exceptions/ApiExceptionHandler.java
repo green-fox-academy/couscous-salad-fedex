@@ -1,8 +1,6 @@
 package com.greenfoxacademy.fedex.exceptions;
 
-import com.greenfoxacademy.fedex.models.reactions.ReactionResponseDTO;
 import com.greenfoxacademy.fedex.models.ResponseDto;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -36,15 +34,13 @@ public class ApiExceptionHandler {
   }
 
   @ExceptionHandler(InvalidMemeException.class)
-  public ResponseEntity<ReactionResponseDTO> handleInvalidMemeException(InvalidMemeException ex) {
-    return new ResponseEntity<>(
-            new ReactionResponseDTO(HttpStatus.BAD_REQUEST, ex.getMessage()), HttpStatus.BAD_REQUEST);
+  public ResponseEntity<ResponseDto> handleInvalidMemeException(InvalidMemeException ex) {
+    return ResponseEntity.status(400).body(new ResponseDto(errorStr, ex.getMessage(), null));
   }
 
   @ExceptionHandler(InvalidReactionException.class)
-  public ResponseEntity<ReactionResponseDTO> handleInvalidReactionException(InvalidReactionException ex) {
-    return new ResponseEntity<>(
-            new ReactionResponseDTO(HttpStatus.BAD_REQUEST, ex.getMessage()), HttpStatus.BAD_REQUEST);
+  public ResponseEntity<ResponseDto> handleInvalidReactionException(InvalidReactionException ex) {
+    return ResponseEntity.status(400).body(new ResponseDto(errorStr, ex.getMessage(), null));
   }
 
 }

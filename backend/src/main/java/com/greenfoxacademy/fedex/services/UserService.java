@@ -5,6 +5,7 @@ import com.greenfoxacademy.fedex.exceptions.MissingParametersException;
 import com.greenfoxacademy.fedex.exceptions.ParamAlreadyExistException;
 import com.greenfoxacademy.fedex.models.ResponseDto;
 import com.greenfoxacademy.fedex.models.User;
+import com.greenfoxacademy.fedex.models.reactions.ReactionGiversValue;
 import com.greenfoxacademy.fedex.repositories.UserRepository;
 import com.greenfoxacademy.fedex.security.CustomUserDetailsService;
 import com.greenfoxacademy.fedex.security.JwtUtil;
@@ -99,5 +100,4 @@ public class UserService {
     Pattern pattern = Pattern.compile(emailRegex);
     return pattern.matcher(email).matches();
   }
-
 }
