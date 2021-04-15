@@ -17,20 +17,11 @@ import java.util.List;
 @AllArgsConstructor
 public class MemeDTO {
 
+    @JsonProperty(value = "meme_id")
+    private Long memeId;
     @JsonProperty(value = "meme_path")
     private String memePath;
     @JsonProperty(value = "reaction_list")
     private List<ReactionDTO> reactionList;
-
-    public MemeDTO(String memePath) {
-        this.memePath = memePath;
-        this.reactionList = Arrays.asList(
-            new ReactionDTO(ReactionType.FUNNY, 0),
-            new ReactionDTO(ReactionType.SAD, 0),
-            new ReactionDTO(ReactionType.SURPRISED, 0),
-            new ReactionDTO(ReactionType.ANGRY, 0),
-            new ReactionDTO(ReactionType.EROTIC, 0),
-            new ReactionDTO(ReactionType.HAPPY, 0)
-        );
-    }
+    private List<String> comments;
 }

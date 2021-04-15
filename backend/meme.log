@@ -21,3 +21,4 @@
 2021-04-15 14:04:25,847 WARN org.springframework.security.authentication.InsufficientAuthenticationException Full authentication is required to access this resource
 2021-04-15 14:51:42,762 DEBUG Filter 'requestLoggingFilterConfig' configured for use
 2021-04-15 14:53:20,573 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 16:06:46,564 DEBUG Filter 'requestLoggingFilterConfig' configured for use
