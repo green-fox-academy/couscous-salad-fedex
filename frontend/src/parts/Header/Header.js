@@ -8,12 +8,12 @@ import deleteStoreAction from '../../actions/deleteStore';
 const Header = () => {
   const cookie = new Cookies();
   const token = useSelector((state) => state.login.token);
-  const accessToken = new Cookies().get('accessToken');
+  const accessToken = new Cookies().get('Meme-token');
   const userName = useSelector((state) => state.login.data.userName);
   const dispatch = useDispatch();
 
   const handleLogoutClick = () => {
-    cookie.remove('accessToken');
+    cookie.remove('Meme-token');
     dispatch(deleteStoreAction());
   };
 
