@@ -1,5 +1,6 @@
 package com.greenfoxacademy.fedex.models;
 
+import com.greenfoxacademy.fedex.models.reactions.ReactionGiversValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,8 @@ public class User {
     private String email;
     private String password;
 
-    @ManyToMany(mappedBy = "userList")
-    private List<ReactionGivers> reactionList;
+    @OneToMany(mappedBy = "user")
+    private List<ReactionGiversValue> reactionList;
 
     public User(String username, String email, String password) {
         this.username = username;

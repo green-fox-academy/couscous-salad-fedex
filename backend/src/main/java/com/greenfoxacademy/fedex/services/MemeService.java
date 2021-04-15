@@ -1,84 +1,69 @@
 package com.greenfoxacademy.fedex.services;
 
 import com.greenfoxacademy.fedex.exceptions.InvalidMemeException;
-import com.greenfoxacademy.fedex.exceptions.InvalidReactionException;
-import com.greenfoxacademy.fedex.models.*;
+import com.greenfoxacademy.fedex.models.Meme;
+import com.greenfoxacademy.fedex.models.MemeDTO;
+import com.greenfoxacademy.fedex.models.MemeRequestDTO;
+import com.greenfoxacademy.fedex.models.reactions.ReactionDTO;
+import com.greenfoxacademy.fedex.models.reactions.ReactionGivers;
+import com.greenfoxacademy.fedex.models.reactions.ReactionGiversValue;
 import com.greenfoxacademy.fedex.repositories.MemeRepository;
-import com.greenfoxacademy.fedex.repositories.ReactionGiversRepository;
-import com.greenfoxacademy.fedex.repositories.ReactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MemeService {
     private MemeRepository memeRepository;
-    private ReactionRepository reactionRepository;
-    private ReactionGiversRepository reactionGiversRepository;
+    private ReactionService reactionService;
 
     @Autowired
-    public MemeService(MemeRepository memeRepository, ReactionRepository reactionRepository,
-                       ReactionGiversRepository reactionGiversRepository) {
+    public MemeService(MemeRepository memeRepository, ReactionService reactionService) {
         this.memeRepository = memeRepository;
-        this.reactionRepository = reactionRepository;
-        this.reactionGiversRepository = reactionGiversRepository;
+        this.reactionService = reactionService;
     }
 
-    public ReactionResponseDTO giveReaction(User user, Long memeId, ReactionRequestDTO reactionRequest)
-            throws InvalidMemeException, InvalidReactionException {
-        Meme meme = checkIfValidMemeId(memeId);
-        Reaction reaction = checkReactionType(reactionRequest);
-        return new ReactionResponseDTO(saveReaction(user, meme, reaction));
+
+    public Meme getMemeFromId(Long memeId) throws InvalidMemeException {
+        return memeRepository.findById(memeId).orElseThrow(() -> new InvalidMemeException("Invalid Meme ID"));
     }
 
-    private ReactionGivers saveReaction(User user, Meme meme, Reaction reaction)
-            throws InvalidReactionException {
-        Optional<ReactionGivers> optionalReactionGivers =
-                reactionGiversRepository.findById_MemeIdAndId_ReactionId(meme.getId(), reaction.getId());
-        if (!optionalReactionGivers.isPresent()) {
-            return createNewReactionGivers(user, meme, reaction);
-        }
-        return updateReactionGivers(optionalReactionGivers.get(), user);
+    private boolean checkMemeExistenceByPath(String memePath){
+        return memeRepository.findMemeByMemePath(memePath).isPresent();
     }
 
-    private ReactionGivers createNewReactionGivers(User user, Meme meme, Reaction reaction) {
-        return reactionGiversRepository.save(new ReactionGivers(meme, reaction, user));
+    public MemeDTO saveMeme(MemeRequestDTO memeRequest) throws InvalidMemeException {
+        if(!checkMemeExistenceByPath(memeRequest.getMemePath())){
+            List<ReactionGivers> reactionGiversList = new ArrayList<>();
+            Meme meme = new Meme(memeRequest.getMemePath(), reactionGiversList);
+            memeRepository.save(meme);
+            return memeToDTO(meme);
+        } else throw new InvalidMemeException("This meme already exists.");
     }
 
-    private ReactionGivers updateReactionGivers(ReactionGivers reactionGivers, User user)
-            throws InvalidReactionException {
-        reactionGivers.addUser(user);
-        return reactionGiversRepository.save(reactionGivers);
-    }
-
-    private Reaction checkReactionType(ReactionRequestDTO reactionRequest)
-            throws InvalidReactionException {
-        if (reactionRequest == null || reactionRequest.getReactionType() == null) {
-            throw new InvalidReactionException("Missing parameter: reaction type");
-        }
-        return reactionRepository.findById(
-                reactionRequest.getReactionType()).orElseThrow(() -> new InvalidReactionException("Invalid Reaction Type"));
-    }
-
-    private Meme checkIfValidMemeId(Long memeId)
+    public Meme checkIfValidMemeId(Long memeId)
             throws InvalidMemeException {
         return memeRepository.findById(memeId).orElseThrow(() -> new InvalidMemeException("Invalid Meme ID"));
+    }
+
+    public MemeDTO memeToDTO(Meme meme){
+        List<ReactionDTO> reactionList = new ArrayList<>();
+        meme.getReactionGiversList()
+            .forEach(rg -> reactionList.add(new ReactionDTO(
+                rg.getReaction().getId(),
+                rg.getReactionGiversValueList()
+                .stream().mapToInt(ReactionGiversValue::getAmount)
+                .sum()))
+            );
+        return new MemeDTO(meme.getMemePath(), reactionList);
     }
 
     public List<MemeDTO> getAllMemes() {
         List<MemeDTO> memeList = new ArrayList<>();
         memeRepository.findAll().forEach(
-                meme -> memeList.add(new MemeDTO(meme.getMemePath(), reactionsOfOneMeme(meme))));
+                meme -> memeList.add(new MemeDTO(meme.getMemePath(), reactionService.reactionsOfOneMeme(meme))));
         return memeList;
-    }
-
-    private List<ReactionDTO> reactionsOfOneMeme(Meme meme) {
-        List<ReactionDTO> reactionList = new ArrayList<>();
-        meme.getReactionGiversList()
-                .forEach(rg -> reactionList.add(new ReactionDTO(rg.getReaction().getId(), rg.getUserList().size())));
-        return reactionList;
     }
 }
