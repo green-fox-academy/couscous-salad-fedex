@@ -38,7 +38,7 @@ const Login = () => {
       dispatch(loadUserToken(responseBody.token));
       dispatch(loadUserTokenPayload(decodedJWTToken.payload));
       const cookie = new Cookies();
-      cookie.set('accessToken', responseBody.token, {
+      cookie.set('Meme-token', responseBody.token, {
         path: '/',
       });
       history.push('/main');
