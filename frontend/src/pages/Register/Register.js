@@ -4,21 +4,21 @@ import PasswordStrength from '../../components/PasswordStrength';
 import './Register.css';
 
 const Register = () => {
-  const [userName, setUserName] = useState('');
+  const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [inputStatus, setInputStatus] = useState('register-input-OK');
   const history = useHistory();
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userData = { userName, email, password };
+    const userData = { username, email, password };
     const URL = process.env.REACT_APP_API_URL;
 
     try {
-      const response = await fetch(`${URL}/api/register`, {
+      const response = await fetch(`${URL}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
@@ -50,7 +50,7 @@ const Register = () => {
             required
             placeholder="Username"
             minLength="3"
-            value={userName}
+            value={username}
             onChange={e => {
               setUserName(e.target.value);
               setInputStatus('register-input-OK');
@@ -63,7 +63,7 @@ const Register = () => {
             required
             placeholder="E-mail"
             value={email}
-            onChange={e => {
+            onChange={(e) => {
               setEmail(e.target.value);
               setInputStatus('register-input-OK');
               setError(null);
@@ -76,7 +76,7 @@ const Register = () => {
             placeholder="Password"
             minLength="8"
             value={password}
-            onChange={e => {
+            onChange={(e) => {
               setPassword(e.target.value);
               setInputStatus('register-input-OK');
               setError(null);

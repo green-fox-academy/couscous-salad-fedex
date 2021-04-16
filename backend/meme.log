@@ -1,0 +1,24 @@
+2021-04-15 13:54:59,036 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 13:55:08,776 WARN com.greenfoxacademy.fedex.exceptions.ParamAlreadyExistException Username already exists, please choose another one
+2021-04-15 13:55:08,803 INFO After request [POST /register] Execution time: 248ms
+2021-04-15 13:56:05,922 INFO Successful login for user: null
+2021-04-15 13:56:06,222 INFO After request [POST /login] Execution time: 301ms
+2021-04-15 13:56:48,959 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 13:56:52,141 INFO Successful login for user: bond@mail.com
+2021-04-15 13:56:52,574 INFO After request [POST /login] Execution time: 534ms
+2021-04-15 13:57:29,919 ERROR Uncaught org.springframework.http.converter.HttpMessageNotReadableException at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:389)
+2021-04-15 13:57:29,922 INFO After request [PUT /reaction/1] Execution time: 13ms
+2021-04-15 13:58:51,742 ERROR Uncaught org.springframework.http.converter.HttpMessageNotReadableException at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:389)
+2021-04-15 13:58:51,744 INFO After request [PUT /reaction/1] Execution time: 4ms
+2021-04-15 13:59:02,546 INFO After request [PUT /reaction/1] Execution time: 89ms
+2021-04-15 13:59:18,463 INFO After request [GET /meme] Execution time: 68ms
+2021-04-15 13:59:29,681 INFO After request [GET /meme] Execution time: 57ms
+2021-04-15 13:59:43,190 INFO After request [GET /meme/1] Execution time: 28ms
+2021-04-15 13:59:47,080 INFO After request [GET /meme/1] Execution time: 24ms
+2021-04-15 13:59:59,993 INFO After request [GET /meme/1] Execution time: 17ms
+2021-04-15 14:03:20,803 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 14:04:20,634 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 14:04:25,847 WARN org.springframework.security.authentication.InsufficientAuthenticationException Full authentication is required to access this resource
+2021-04-15 14:51:42,762 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 14:53:20,573 DEBUG Filter 'requestLoggingFilterConfig' configured for use
+2021-04-15 16:06:46,564 DEBUG Filter 'requestLoggingFilterConfig' configured for use

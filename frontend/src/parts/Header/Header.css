@@ -8,6 +8,9 @@
   text-decoration: none;
   color: black;
   margin-left: 20px;
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 1.3rem;
 }
 .headerLinks {
   margin-left: auto;
@@ -15,8 +18,15 @@
 }
 .header h1 {
   color: black;
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 1.7rem;
+  -webkit-box-reflect: below -0.4em linear-gradient(transparent, #0004);
 }
 .header h2 {
   margin-left: 20px;
   text-decoration: underline;
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 1.7rem;
 }

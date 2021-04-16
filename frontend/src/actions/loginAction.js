@@ -1,7 +1,7 @@
 import {
   LOAD_USER_TOKEN,
   LOAD_USER_TOKEN_PAYLOAD,
-} from '../constans/actionTypes';
+} from '../constants/actionTypes';
 
 export function loadUserToken(payload) {
   return {

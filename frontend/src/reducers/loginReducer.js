@@ -2,7 +2,7 @@ import {
   DELETE_STORE,
   LOAD_USER_TOKEN,
   LOAD_USER_TOKEN_PAYLOAD,
-} from '../constans/actionTypes';
+} from '../constants/actionTypes';
 
 const initialState = {
   token: '',

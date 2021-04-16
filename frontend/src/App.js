@@ -5,27 +5,33 @@ import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import './App.css';
 import Header from './parts/Header/Header';
-import RootRedirect from './parts/RootRedirect/RootRedirect';
+import SetOwnReactions from './components/SetOwnReactions';
+
+import Memelist from './pages/Memes/Memelist';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
-        <Route path="/">
-          <RootRedirect />
-        </Route>
+        <Route exact path="/"></Route>
         <Switch>
-          <Route path="/login">
+          <Route exact path="/" className="memelist" component={Memelist}/>
+          <Route exact path="/setreaction/:id" className="memereaction" component={SetOwnReactions}/>
+          <Route exact path="/login">
             <Login />
           </Route>
-          <Route path="/register">
+          <Route exact path="/register">
             <Register />
           </Route>
-          <Route path="*">
+          <Route exact path="*">
             <NotFound />
           </Route>
         </Switch>
+          <Switch>
+            <Route exact path="/" className="memelist" component={Memelist} />
+          </Switch>
+       
       </div>
     </Router>
   );

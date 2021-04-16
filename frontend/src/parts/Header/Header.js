@@ -7,15 +7,13 @@ import deleteStoreAction from '../../actions/deleteStore';
 
 const Header = () => {
   const cookie = new Cookies();
-  const storeData = useSelector((state) => state);
   const token = useSelector((state) => state.login.token);
-  const accessToken = new Cookies().get('accessToken');
+  const accessToken = new Cookies().get('Meme-token');
   const userName = useSelector((state) => state.login.data.userName);
   const dispatch = useDispatch();
-  console.log(storeData);
 
   const handleLogoutClick = () => {
-    cookie.remove('accessToken');
+    cookie.remove('Meme-token');
     dispatch(deleteStoreAction());
   };
 
@@ -35,7 +33,7 @@ const Header = () => {
         <h1>Hi {userName}!</h1>
       </Link>
       <div className="headerLinks">
-        <Link>Create</Link>
+        <Link to="/memegenerator">Create</Link>
         <Link to="/login" onClick={handleLogoutClick}>
           Logout
         </Link>

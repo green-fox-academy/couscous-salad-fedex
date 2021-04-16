@@ -1,4 +1,4 @@
-import { DELETE_STORE } from '../constans/actionTypes';
+import { DELETE_STORE } from '../constants/actionTypes';
 
 function deleteStoreAction(payload) {
   return {
