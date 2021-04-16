@@ -80,9 +80,8 @@ const CommentBox = (props) => {
         <span>{ token.username }</span>
       </div>
       </div>
-      <div className="header"> ... </div>
-
-		<label htmlFor="comment">Your comment</label>
+      
+	<label htmlFor="comment">Your comment</label>
     <textarea
       ref={textRef}
       onClick={onExpand}
