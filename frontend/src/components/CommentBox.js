@@ -11,7 +11,7 @@ const CommentBox = (props) => {
   const { meme } = props;
   const cookie = new Cookies();
   const token = cookie.get('accessToken');
-  const backendUrl = process.env.REACT_APP_BACKENDURL;
+  const backendUrl = process.env.REACT_APP_API_URL;
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(false);
   const [commentValue, setCommentValue] = useState("");
