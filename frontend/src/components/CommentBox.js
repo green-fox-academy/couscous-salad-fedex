@@ -54,7 +54,7 @@ const CommentBox = (props) => {
         throw new Error('Connection failed!');
       })
       .then(() => {
-        dispatch(saveComment(commentValue)) // itt honnan tudom melyik meme?
+        dispatch(saveComment(commentValue)) 
       })
       .catch(err => {
         console.log(err);
