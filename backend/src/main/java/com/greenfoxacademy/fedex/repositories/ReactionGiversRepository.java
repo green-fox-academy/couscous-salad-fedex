@@ -1,8 +1,8 @@
 package com.greenfoxacademy.fedex.repositories;
 
-import com.greenfoxacademy.fedex.models.reactions.ReactionGivers;
-import com.greenfoxacademy.fedex.models.reactions.ReactionGiversKey;
-import com.greenfoxacademy.fedex.models.reactions.ReactionType;
+import com.greenfoxacademy.fedex.models.ReactionGivers;
+import com.greenfoxacademy.fedex.models.ReactionGiversKey;
+import com.greenfoxacademy.fedex.models.ReactionType;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

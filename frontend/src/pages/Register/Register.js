@@ -11,7 +11,7 @@ const Register = () => {
   const [inputStatus, setInputStatus] = useState('register-input-OK');
   const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     const userData = { username, email, password };
@@ -63,7 +63,7 @@ const Register = () => {
             required
             placeholder="E-mail"
             value={email}
-            onChange={(e) => {
+            onChange={e => {
               setEmail(e.target.value);
               setInputStatus('register-input-OK');
               setError(null);
@@ -76,7 +76,7 @@ const Register = () => {
             placeholder="Password"
             minLength="8"
             value={password}
-            onChange={(e) => {
+            onChange={e => {
               setPassword(e.target.value);
               setInputStatus('register-input-OK');
               setError(null);
