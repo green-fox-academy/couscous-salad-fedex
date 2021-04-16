@@ -6,7 +6,7 @@ const MemeGenerator = () => {
 
   return (
     <div>
-      <div className="meme-editor">
+      <div>
         <MemeEditor />
       </div>
 

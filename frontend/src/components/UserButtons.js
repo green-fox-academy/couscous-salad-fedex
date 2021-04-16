@@ -4,7 +4,7 @@ import { setReactions } from '../actions/reactionActions';
 import { useHistory } from 'react-router';
 
 function UserButtons(props) {
- 
+
   const { meme } = props;
   const dispatch = useDispatch();
   const history = useHistory();
@@ -12,7 +12,7 @@ function UserButtons(props) {
   const handleClick = (meme) => {
     history.push(`/setreactions/:${meme.meme_id}`)
   }
-  
+
   useEffect(() => {
     dispatch(setReactions(meme));
   }, [meme]);

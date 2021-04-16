@@ -1,8 +1,8 @@
 :root {
   --black: #333;
-  --white: #fff;
+/*   --white: #fff;
   --gray: #aaa;
-  --green: #1a8917;
+  --green: #1a8917; */
   --border-radius: 4px;
   --transition: 0.4s ease;
   --font-family: Arial, Helvetica, sans-serif;
@@ -18,11 +18,11 @@ textarea::placeholder {
   color: var(--gray);
 }
 
-label {
+/* label {
   height: 0;
   width: 0;
   visibility: hidden;
-}
+} */
 
 button {
   cursor: pointer;
