@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  # service neve, a logokban is így található meg
+  fedex-backend:
+    # container neve
+    container_name: fedex-backend
+    # melyik image-ből induljon ki (ez most java8)
+    image: openjdk:8
+    depends_on:
+      - fedex-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://fedex-db/fedex?serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_SECRET_KEY=asd123
+    # enveket lehet fájlból is venni, egyszerre env_file és environment nem működik!
+    # env_file:
+    #   - ../backend/.env
+
+    # host gépen port : containerben port
+    ports:
+      - 8080:8080
+    # volume be lesz csatolva, mint külső meghajtó (pl.: mintha pendrive-ként dugnád a gépbe)
+    volumes:
+      # host gépről mit "másoljon" be a containerbe,
+      # ha változik a fájl neve (mert pl.: verziókezelik),
+      # akkor itt is változtatni kell a fájlt
+      - ../backend/fedex-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    command: java -jar app.jar
+
+  fedex-db:
+    image: mysql:latest
+    container_name: fedex-db
+    environment:
+      - MYSQL_DATABASE=fedex
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./data/mysql/:/var/lib/mysql/
+    ports:
+      - 3307:3306
+    command: --default-authentication-plugin=mysql_native_password
